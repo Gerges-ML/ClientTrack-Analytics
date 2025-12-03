@@ -1,0 +1,8 @@
+
+
+Total Revenue = SUM('cleaned_sales_data'[Revenue])
+Total Appointments = COUNTROWS('cleaned_sales_data')
+New Clients = CALCULATE(DISTINCTCOUNT('cleaned_sales_data'[CustomerID]), FILTER('cleaned_sales_data', LOWER('cleaned_sales_data'[CustomerType]) = "new"))
+Returning Clients = CALCULATE(DISTINCTCOUNT('cleaned_sales_data'[CustomerID]), FILTER('cleaned_sales_data', LOWER('cleaned_sales_data'[CustomerType]) = "returning"))
+Average Order Size = AVERAGE('cleaned_sales_data'[AverageOrderSize])
+
